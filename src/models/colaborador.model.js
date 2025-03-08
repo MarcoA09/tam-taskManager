@@ -1,24 +1,21 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const colabSchema = new mongoose.Schema(
   {
-    username: {
+    name: {
       type: String,
-      required: true,
-      trim: true,
+      required: true, 
     },
-    email: {
+    email: { 
       type: String,
       required: true,
-      unique: true,
     },
     rol: {
       type: String,
       required: true,
     },
-    password: {
+    codigo: {
       type: String,
-      required: true,
     },
   },
   {
@@ -26,4 +23,4 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("User", userSchema);
+export default mongoose.model("Colab", colabSchema);

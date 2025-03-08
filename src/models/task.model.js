@@ -6,7 +6,7 @@ const taskSchema = new mongoose.Schema(
       type: String,
       required: true, 
     },
-    description: {
+    description: { 
       type: String,
       required: true,
     },
@@ -25,6 +25,16 @@ const taskSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
+    },
+    group: {
+      type: mongoose.Types.ObjectId,
+      ref: "Group",
+      required: true,
+    },
+    user_assigned:{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
     },
     user: {
      type : mongoose.Types.ObjectId,
